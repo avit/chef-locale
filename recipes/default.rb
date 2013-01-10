@@ -28,6 +28,7 @@ if platform?("ubuntu", "debian")
   	command_string << " LANGUAGE=#{node[:locale][:language]}" unless node[:locale][:language].nil?
   	command_string << " LC_ALL=#{node[:locale][:lc_all]}" unless node[:locale][:lc_all].nil?
     command command_string
+    command 'source /etc/default/locale'
   end
 
 end
